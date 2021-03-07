@@ -24,18 +24,14 @@ const loadPrevious = () => {
 }
 
 const load = (url) => {
-    console.log(url);
     fetch(url)
         .then(result => {
             return result.json();
         })
         .then(data => {
-            console.log(data); // Remove before submission
-            // get next and previous urls
             nextUrl = data.next;
             previousUrl = data.previous;
             count = data.count;
-            console.log(count);
 
             // find where to place pokemon
             const div = document.getElementById('pokemon');
@@ -53,6 +49,7 @@ const load = (url) => {
             // configure button opacity if not usable
             previousButton = document.getElementById('previousButton');
             nextButton = document.getElementById('nextButton');
+            lastButton = document.getElementById('lastButton');
             if (previousUrl) {
                 previousButton.style.opacity = '1'
             } else {
@@ -61,8 +58,10 @@ const load = (url) => {
 
             if (nextUrl) {
                 nextButton.style.opacity = '1'
+                lastButton.style.opacity = '1';
             } else {
                 nextButton.style.opacity = '0.5';
+                lastButton.style.opacity = '0.5';
             }
         })
         .catch(err => {
