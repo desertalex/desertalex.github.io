@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work From Home Calculator</title>
+</head>
+<body>
+    <select name="year" id="year"></select>
+    <select name="make" id="make"></select>
+    <select name="model" id="model"></select>
+    <select name="option" id="option"></select>
+    <button onclick="getCarData()">Touch me</button>
+    <p name = "avgMpg" id="avgMpg"></p>
+
+    <p>
+        Dev Notes: <br>
+        There is no error handling. <br>
+        If a car model only has a single option, it doesn't work. <br>
+        If you go back and change the selectors, the info does not clear out from the previous selections. <br>
+        This is a work in progress.
+    </p>
+</body>
+<script src="script.js"></script>
+</html>
